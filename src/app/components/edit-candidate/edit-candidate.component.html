@@ -1,0 +1,49 @@
+<div class="candidate-form">
+    <h2 class="form-title">Edit Candidate</h2>
+    <form (ngSubmit)="updateCandidate()">
+        <div class="form-group">
+            <label class="form-label" for="firstName">First Name</label>
+            <input class="form-input" type="text" id="firstName" [(ngModel)]="candidate.firstName" name="firstName"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="lastName">Last Name</label>
+            <input class="form-input" type="text" id="lastName" [(ngModel)]="candidate.lastName" name="lastName"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="jmbg">JMBG</label>
+            <input class="form-input" type="text" id="jmbg" [(ngModel)]="candidate.jmbg" name="jmbg" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="birthYear">Birth Year</label>
+            <input class="form-input" type="number" id="birthYear" [(ngModel)]="candidate.birthYear" name="birthYear"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" [(ngModel)]="candidate.email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" type="text" id="phone" [(ngModel)]="candidate.phone" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="note">Note</label>
+            <textarea class="form-textarea" id="note" [(ngModel)]="candidate.note" name="note"></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input class="form-checkbox" type="checkbox" id="isHired" [(ngModel)]="candidate.hired" name="isHired">
+            <label class="form-label" for="isHired">Is Hired</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Candidate</button>
+    </form>
+</div>

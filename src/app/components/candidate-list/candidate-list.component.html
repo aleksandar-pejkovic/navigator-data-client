@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let candidate of candidates" class="candidate-item">
+        <tr *ngFor="let candidate of candidates" class="candidate-item" (click)="viewCandidate(candidate.id)">
             <td>{{ candidate.firstName }}</td>
             <td>{{ candidate.lastName }}</td>
             <td>{{ candidate.jmbg }}</td>

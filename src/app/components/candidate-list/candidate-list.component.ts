@@ -4,7 +4,7 @@ import { Candidate } from '../../models/candidate.model';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-candidate-list',
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
 export class CandidateListComponent implements OnInit {
   candidates: Candidate[] = [];
 
-  constructor(private candidateService: CandidateService) { }
+  constructor(private candidateService: CandidateService, private router: Router) { }
 
   ngOnInit(): void {
     this.candidateService.getCandidates().subscribe((data) => {
@@ -27,10 +27,14 @@ export class CandidateListComponent implements OnInit {
 
   deleteCandidateById(id: number): void {
     if (confirm('Are you sure you want to delete this candidate?')) {
-        this.candidateService.deleteCandidateById(id).subscribe(() => {
-            this.candidates = this.candidates.filter(candidate => candidate.id !== id);
-            console.log(`Candidate with id ${id} deleted.`);
-        });
+      this.candidateService.deleteCandidateById(id).subscribe(() => {
+        this.candidates = this.candidates.filter(candidate => candidate.id !== id);
+        console.log(`Candidate with id ${id} deleted.`);
+      });
     }
-}
+  }
+
+  viewCandidate(id: number): void {
+    this.router.navigate([`/candidates/edit/${id}`]);
+  }
 }
