@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CandidateService, Candidate } from '../../services/candidate.service';
+import { CandidateService } from '../../services/candidate.service';
+import { Candidate } from '../../models/candidate.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
