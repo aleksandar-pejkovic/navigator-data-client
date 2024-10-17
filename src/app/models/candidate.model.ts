@@ -7,6 +7,6 @@ export interface Candidate {
     email: string;
     phone: string;
     note: string;
-    isHired: boolean;
+    hired: Boolean;
     lastModified: Date;
 }

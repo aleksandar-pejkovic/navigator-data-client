@@ -2,58 +2,20 @@
   <header class="header">
     <h1>Candidate Management</h1>
     <nav class="navbar">
-      <a routerLink="/candidates" class="nav-link">Home</a>
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/candidates" class="nav-link">Candidates</a>
       <a routerLink="/candidates/add" class="nav-link">Add Candidate</a>
+      <a class="nav-link" (click)="exportCandidates()">Export Candidates to CSV</a>
     </nav>
   </header>
 
   <div class="content">
     <section class="candidate-section">
-      <app-candidate-list></app-candidate-list>
+      <router-outlet></router-outlet>
     </section>
   </div>
 
   <footer class="footer">
-    <p>&copy; 2024 Aleksandar Pejkovic. All Rights Reserved.</p>
+    <p>&copy; 2024 Aleksandar Pejkovic - Navigator Candidate Client</p>
   </footer>
 </main>
-
-<router-outlet></router-outlet>
-
-<style>
-  .main {
-    font-family: 'roboto', sans-serif;
-    min-height: 70vh;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-  }
-
-  .navbar {
-    display: flex;
-    gap: 15px;
-  }
-
-  .nav-link {
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-
-  .content {
-    margin-top: 20px;
-  }
-
-  .footer {
-    margin-top: 40px;
-    text-align: center;
-    color: #777;
-  }
-</style>

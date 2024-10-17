@@ -1,8 +1,21 @@
-<h2>Candidates</h2>
-<ul>
-    <li *ngFor="let candidate of candidates">
-        <p>{{ candidate.firstName }} {{ candidate.lastName }} - JMBG: {{ candidate.jmbg }}</p>
-        <button (click)="deleteCandidateById(candidate.id)" class="btn btn-danger">Delete</button>
-    </li>
-</ul>
-<button routerLink="/candidates/add" class="btn btn-primary">Add Candidate</button>
+<h2>All Candidates</h2>
+<table class="candidate-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>JMBG</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let candidate of candidates" class="candidate-item">
+            <td>{{ candidate.firstName }}</td>
+            <td>{{ candidate.lastName }}</td>
+            <td>{{ candidate.jmbg }}</td>
+            <td>
+                <button (click)="deleteCandidateById(candidate.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

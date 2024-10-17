@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Candidate } from '../models/candidate.model';
-import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +11,19 @@ export class CandidateService {
 
   constructor(private http: HttpClient) { }
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': '*'
-    })
-  };
-
   getCandidates(): Observable<Candidate[]> {
-    return this.http.get<Candidate[]>(this.apiUrl, this.httpOptions);
+    return this.http.get<Candidate[]>(this.apiUrl);
   }
 
   addCandidate(candidate: Candidate): Observable<Candidate> {
-    return this.http.post<Candidate>(this.apiUrl, candidate, this.httpOptions);
+    return this.http.post<Candidate>(this.apiUrl, candidate);
   }
 
   deleteCandidateById(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`, this.httpOptions);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  exportCandidatesToCsv(): Observable<void> {
+    return this.http.get<void>(`${this.apiUrl}/export`);
   }
 }

@@ -1,0 +1,44 @@
+.candidate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  .candidate-table th, .candidate-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .candidate-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .candidate-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger {
+    border: solid 1px red;
+    color: red;
+  }
+  
+  .btn-danger:hover {
+    background-color: red;
+    color: white;
+  }
+  

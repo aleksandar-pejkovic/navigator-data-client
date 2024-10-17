@@ -4,11 +4,12 @@ import { Candidate } from '../../models/candidate.model';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-candidate-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, FormsModule, HttpClientModule],
   templateUrl: './candidate-list.component.html',
   styleUrls: ['./candidate-list.component.css'],
   providers: [CandidateService],
@@ -25,9 +26,11 @@ export class CandidateListComponent implements OnInit {
   }
 
   deleteCandidateById(id: number): void {
-    this.candidateService.deleteCandidateById(id).subscribe(() => {
-      this.candidates = this.candidates.filter(candidate => candidate.id !== id);
-      console.log(`Candidate with id ${id} deleted.`);
-    });
-  }
+    if (confirm('Are you sure you want to delete this candidate?')) {
+        this.candidateService.deleteCandidateById(id).subscribe(() => {
+            this.candidates = this.candidates.filter(candidate => candidate.id !== id);
+            console.log(`Candidate with id ${id} deleted.`);
+        });
+    }
+}
 }

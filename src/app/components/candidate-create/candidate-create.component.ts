@@ -3,11 +3,13 @@ import { CandidateService } from '../../services/candidate.service';
 import { Candidate } from '../../models/candidate.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-candidate-create',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule, HttpClientModule],
   templateUrl: './candidate-create.component.html',
   styleUrls: ['./candidate-create.component.css'],
   providers: [CandidateService],
@@ -19,11 +21,11 @@ export class CandidateCreateComponent {
     firstName: '',
     lastName: '',
     jmbg: '',
-    birthYear: 0,
+    birthYear: 2000,
     email: '',
     phone: '',
     note: '',
-    isHired: false,
+    hired: false,
     lastModified: new Date()
   };
 
@@ -38,11 +40,11 @@ export class CandidateCreateComponent {
         firstName: '',
         lastName: '',
         jmbg: '',
-        birthYear: 0,
+        birthYear: 2000,
         email: '',
         phone: '',
         note: '',
-        isHired: false,
+        hired: false,
         lastModified: new Date()
       };
     });

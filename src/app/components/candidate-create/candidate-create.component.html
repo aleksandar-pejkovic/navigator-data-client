@@ -1,44 +1,47 @@
 <div class="candidate-form">
-    <h2>Create New Candidate</h2>
+    <h2 class="form-title">Create New Candidate</h2>
     <form (ngSubmit)="addCandidate()">
         <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" [(ngModel)]="newCandidate.firstName" name="firstName" required>
+            <label class="form-label" for="firstName">First Name</label>
+            <input class="form-input" type="text" id="firstName" [(ngModel)]="newCandidate.firstName" name="firstName"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" [(ngModel)]="newCandidate.lastName" name="lastName" required>
+            <label class="form-label" for="lastName">Last Name</label>
+            <input class="form-input" type="text" id="lastName" [(ngModel)]="newCandidate.lastName" name="lastName"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="jmbg">JMBG</label>
-            <input type="text" id="jmbg" [(ngModel)]="newCandidate.jmbg" name="jmbg" required>
+            <label class="form-label" for="jmbg">JMBG</label>
+            <input class="form-input" type="text" id="jmbg" [(ngModel)]="newCandidate.jmbg" name="jmbg" required>
         </div>
 
         <div class="form-group">
-            <label for="birthYear">Birth Year</label>
-            <input type="number" id="birthYear" [(ngModel)]="newCandidate.birthYear" name="birthYear" required>
+            <label class="form-label" for="birthYear">Birth Year</label>
+            <input class="form-input" type="number" id="birthYear" [(ngModel)]="newCandidate.birthYear" name="birthYear"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" [(ngModel)]="newCandidate.email" name="email" required>
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" [(ngModel)]="newCandidate.email" name="email" required>
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" [(ngModel)]="newCandidate.phone" name="phone">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" type="text" id="phone" [(ngModel)]="newCandidate.phone" name="phone">
         </div>
 
         <div class="form-group">
-            <label for="note">Note</label>
-            <textarea id="note" [(ngModel)]="newCandidate.note" name="note"></textarea>
+            <label class="form-label" for="note">Note</label>
+            <textarea class="form-textarea" id="note" [(ngModel)]="newCandidate.note" name="note"></textarea>
         </div>
 
         <div class="form-group">
-            <label for="isHired">Is Hired</label>
-            <input type="checkbox" id="isHired" [(ngModel)]="newCandidate.isHired" name="isHired">
+            <label class="form-label" for="hired">Hired</label>
+            <input class="form-checkbox" type="checkbox" id="hired" [(ngModel)]="newCandidate.hired" name="hired">
         </div>
 
         <button type="submit" class="btn btn-primary">Add Candidate</button>
