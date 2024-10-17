@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 export class CandidateCreateComponent {
   newCandidate: Candidate = {
+    id: 0,
     firstName: '',
     lastName: '',
     jmbg: '',
@@ -33,6 +34,7 @@ export class CandidateCreateComponent {
       console.log('Candidate added:', response);
       // Reset the form after successful submission
       this.newCandidate = {
+        id: 0,
         firstName: '',
         lastName: '',
         jmbg: '',
